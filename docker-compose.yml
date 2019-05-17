@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  application:
+    container_name: chef_application
+    build:
+      context: .
+      dockerfile: ./docker/application/Dockerfile
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=chef"
+      - "traefik.frontend.rule=Host:chef.localhost,chef.localhost.visuellverstehen.de"
+      - "traefik.docker.network=web"
+      - "traefik.port=80"
+    working_dir: /var/www/html
+    volumes:
+      - ./docker/application/php.ini:/usr/local/etc/php/php.ini:cached
+      - ./recipes:/var/www/html/recipes:delegated
+      - ./public:/var/www/html/public:delegated
+      - ./:/var/www/html
+    restart: always
+
+networks:
+  web:
+    external: true
