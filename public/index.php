@@ -31,7 +31,7 @@ if(filter_input(INPUT_GET, 'action') === 'recipe') {
     $recipes = [];
 
     foreach (scandir(dirname(__DIR__) . '/recipes/') as $file) {
-        if($file !== '.' && $file !== '..') {
+        if(substr($file, 0, 1) !== '.') {
             $recipe = new \Chef\Recipe;
             $recipe->filename = $file;
 
