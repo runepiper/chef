@@ -23,6 +23,9 @@ if(filter_input(INPUT_GET, 'action') === 'recipe') {
             }
 
             $recipe->text = (new \Parsedown())->text($content);
+
+            echo $recipe->text;
+            die();
         }
     }
 }
@@ -39,7 +42,6 @@ foreach (scandir(dirname(__DIR__) . '/recipes/') as $file) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
