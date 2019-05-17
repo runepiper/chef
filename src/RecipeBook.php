@@ -7,13 +7,12 @@ class RecipeBook
     public function boot()
     {
         if(filter_input(INPUT_GET, 'action') === 'recipe') {
-            $recipe = new \Chef\Recipe;
+            $recipe = new \Chef\Models\Recipe;
             $categories = [];
             $source = '';
 
             foreach (scandir(dirname(__DIR__) . '/recipes/') as $file) {
                 if(md5($file) === filter_input(INPUT_GET, 'recipe')) {
-                    $recipe->setFilename($file);
                     $content = file_get_contents('../recipes/' . $file);
 
                     foreach (explode(PHP_EOL, $content) as $line) {
@@ -28,6 +27,7 @@ class RecipeBook
                         }
                     }
 
+                    $recipe->setFilename($file);
                     $recipe->setCategories($categories);
                     $recipe->setSource($source);
                     $recipe->setText(
@@ -42,7 +42,7 @@ class RecipeBook
 
             foreach (scandir(dirname(__DIR__) . '/recipes/') as $file) {
                 if(substr($file, 0, 1) !== '.') {
-                    $recipe = new \Chef\Recipe;
+                    $recipe = new \Chef\Models\Recipe;
                     $recipe->setFilename($file);
 
                     $recipes[] = $recipe;
