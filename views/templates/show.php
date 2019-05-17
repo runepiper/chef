@@ -10,13 +10,13 @@
             <?php echo $recipe->getTitle() ?>
         </h1>
         <div class="rich-text">
-            <?php echo $recipe->text ?>
+            <?php echo $recipe->getText() ?>
         </div>
         <aside>
-            Quelle: <a href="<?php echo $recipe->source ?>" target="_blank" rel="noopener"><?php echo $recipe->source ?></a>
+            Quelle: <a href="<?php echo $recipe->getSource() ?>" target="_blank" rel="noopener"><?php echo $recipe->getSource() ?></a>
         </aside>
         <ul class="list">
-            <?php foreach($recipe->categories as $category): ?>
+            <?php foreach($recipe->getCategories() as $category): ?>
                 <li class="list__item">
                     <?php echo trim($category) ?>
                 </li>
