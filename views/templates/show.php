@@ -1,0 +1,1 @@
+<?php echo $recipe->text ?>

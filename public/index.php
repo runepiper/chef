@@ -24,38 +24,20 @@ if(filter_input(INPUT_GET, 'action') === 'recipe') {
 
             $recipe->text = (new \Parsedown())->text($content);
 
-            echo $recipe->text;
-            die();
+            require_once '../views/templates/show.php';
         }
     }
-}
+} else {
+    $recipes = [];
 
-$recipes = [];
+    foreach (scandir(dirname(__DIR__) . '/recipes/') as $file) {
+        if($file !== '.' && $file !== '..') {
+            $recipe = new \Chef\Recipe;
+            $recipe->filename = $file;
 
-foreach (scandir(dirname(__DIR__) . '/recipes/') as $file) {
-    if($file !== '.' && $file !== '..') {
-        $recipe = new \Chef\Recipe;
-        $recipe->filename = $file;
-
-        $recipes[] = $recipe;
+            $recipes[] = $recipe;
+        }
     }
-}
 
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Chef</title>
-    </head>
-    <body>
-        <strong><?php echo count($recipes); ?> Rezepte im Bestand</strong>
-        <ul>
-            <?php foreach($recipes as $recipe): ?>
-                <li>
-                    <a href="<?php echo $recipe->getSlug() ?>"><?php echo $recipe->getTitle() ?></a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </body>
-</html>
+    require_once '../views/templates/index.php';
+}
