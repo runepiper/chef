@@ -5,6 +5,7 @@ source: https://www.chefkoch.de/rezepte/2367821375905130/Baerlauchbrot.html
 # Bärlauchbrot
 
 ## Zutaten
+|Menge|Zutat|
 |------|-------|
 |500 g|Weizenmehl (Type 550)|
 |2 Tüten|Trockenhefe (entspricht 1 Würfel)|
