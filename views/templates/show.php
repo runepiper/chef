@@ -17,7 +17,7 @@
             <ul class="list">
                 <?php foreach($recipe->getCategories() as $category): ?>
                     <li class="list__item">
-                        <a class="list__link" href="/?action=search&query=<?php echo trim($category) ?>">
+                        <a class="link" href="/?action=search&query=<?php echo trim($category) ?>">
                             <?php echo trim($category) ?>
                         </a>
                     </li>

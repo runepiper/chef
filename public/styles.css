@@ -21,6 +21,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   font-weight: bold;
   font-size: 1.2rem;
   letter-spacing: 0.1em;
+  margin-bottom: 10px;
 }
 
 /* .form */
@@ -78,12 +79,30 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 }
 
 /* .article */
+.article h1 {
+  display: none;
+}
+
+.article h2 {
+  display: none;
+}
+
 .article table {
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .article thead {
   display: none;
+}
+
+.article td:not(:first-child) {
+  padding-left: 20px;
+}
+
+.article p {
+  font-size: 0.75rem;
+  margin-bottom: 10px;
 }
 
 /* .main */
