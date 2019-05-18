@@ -84,27 +84,19 @@ class RecipeBook
             header('Location: /');
         }
 
-        $recipes = unserialize(
+        $allRecipes = unserialize(
             file_get_contents('../public/cache.php')
         );
 
-        for ($i = 0; $i < count($recipes); $i++) {
-            $match = false;
-
-            if(strripos(strtolower($recipes[$i]->getTitle()), strtolower($query)) !== false) {
-                // We don't have to go any further
-                // so go to the next item.
-                continue;
+        for ($i = 0; $i < count($allRecipes); $i++) {
+            if(strripos(strtolower($allRecipes[$i]->getTitle()), strtolower($query)) !== false) {
+                $recipes[] = $allRecipes[$i];
             }
 
-            foreach ($recipes[$i]->getCategories() as $category) {
+            foreach ($allRecipes[$i]->getCategories() as $category) {
                 if(strripos(strtolower($category), strtolower($query)) !== false) {
-                    $match = true;
+                    $recipes[] = $allRecipes[$i];
                 }
-            }
-
-            if($match === false) {
-                unset($recipes[$i]);
             }
         }
 
