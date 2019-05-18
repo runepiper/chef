@@ -24,3 +24,5 @@ Aus allen obigen Zutaten einen Hefeteig herstellen. Ich gebe alle Zutaten zusamm
 Zu 2 Brotlaiben formen. Oben einschneiden. Entweder eine Stunde an einem warmen Ort gehen lassen, oder bei 50°C ca. eine halbe Stunde im Ofen gehen lassen (ich benutze immer letztere Methode). Dann bei 220°C ca. 20-30 Min. backen. 
 
 Es empfiehlt sich, eine Schüssel Wasser mit in den Ofen zu stellen, oder den Ofen zu befeuchten, dann wird die Kruste schöner. Man sieht eigentlich, wann das Brot fertig ist. Die Kruste ist dann schön hellbraun. Die Backzeit hängt auch von der Größe der Laibe ab.
+
+![Lecker Bärlauchbrot](https://img.chefkoch-cdn.de/ck.de/rezepte/236/236782/602940-960x720-baerlauchbrot.jpg)
