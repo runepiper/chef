@@ -12,7 +12,7 @@
             <ul class="list">
                 <?php foreach($recipes as $recipe): ?>
                     <li class="list__item">
-                        <a class="link" href="<?php echo $recipe->getSlug() ?>">
+                        <a class="list__link" href="<?php echo $recipe->getSlug() ?>">
                             <?php echo $recipe->getTitle() ?>
                         </a>
                     </li>

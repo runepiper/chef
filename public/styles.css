@@ -68,9 +68,22 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 }
 
 /* .list */
+.list__item {
+  position: relative;
+  line-height: 1.1;
+  padding-left: 20px;
+  padding-bottom: 5px;
+}
+
 .list__item::before {
   content: '#';
   color: #888888;
+  position: absolute;
+  left: 0;
+}
+
+.list__link {
+  color: currentColor;
 }
 
 /* .link */
