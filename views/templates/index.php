@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="styles.css?v=<?php echo time() ?>">
-        <title>Chef — Allerlei Rezepte</title>
+        <title>Chef — allerlei Rezepte</title>
     </head>
     <body class="body">
         <?php require dirname(__DIR__) . '/partials/search.php' ?>
