@@ -1,8 +1,10 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    RewriteCond %{HTTP_HOST} ^rezepte.runepiper.de$ [NC]
+    RewriteRule (.*) https://rezepte.runepiper.de/$1 [R=301,L]
+
     # Exclude directories and files from rewriting
-    # RewriteRule ^assets - [NC,L]
     RewriteRule ^uploads/ - [NC,L]
     RewriteRule ^styles.css - [NC,L]
 
