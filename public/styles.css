@@ -26,11 +26,6 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 /* .form */
 .form {
   margin-bottom: 40px;
-  opacity: 0.5;
-}
-
-.form:hover {
-  opacity: 1;
 }
 
 .form__label.form__label--hidden {
@@ -47,6 +42,33 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   border: 1px solid #888888;
   -moz-appearance: none;
   -webkit-appearance: none;
+}
+
+.form__input.form__input--unobtrusive {
+  opacity: 0.5;
+}
+
+.form__input.form__input--unobtrusive:hover {
+  opacity: 1;
+}
+
+
+/* .navigation */
+.navigation {
+  color: #888888;
+  font-size: 0.75rem;
+}
+
+.navigation__item {
+  display: inline;
+}
+
+.navigation__item:not(:last-child)::after {
+  content: '—';
+}
+
+.navigation__link {
+  color: currentColor;
 }
 
 /* .list */

@@ -27,5 +27,6 @@
         <footer class="footer">
             Quelle: <a class="link" href="<?php echo $recipe->getSource() ?>" target="_blank" rel="noopener"><?php echo $recipe->getSource() ?></a>
         </footer>
+        <?php require dirname(__DIR__) . '/partials/navigation.php' ?>
     </body>
 </html>

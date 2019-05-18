@@ -6,7 +6,7 @@
         <title>Chef</title>
     </head>
     <body class="body">
-        <?php require_once dirname(__DIR__) . '/partials/search.php' ?>
+        <?php require dirname(__DIR__) . '/partials/search.php' ?>
         <main class="main">
             <h1 class="headline">Chef</h1>
             <ul class="list">
@@ -20,7 +20,8 @@
             </ul>
         </main>
         <footer class="footer">
-            <?php echo count($recipes); ?> Rezepte im Bestand
+            <?php echo count($recipes); ?> Rezepte <?php echo $query ? 'für Suchbegriff »' . $query . '«' : 'im Bestand' ?>
         </footer class="footer">
+        <?php require dirname(__DIR__) . '/partials/navigation.php' ?>
     </body>
 </html>
