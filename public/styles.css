@@ -6,7 +6,15 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   font-family: monospace;
   font-size: 20px;
   color: #333333;
+  background-color: #ffffff;
   line-height: 1.3;
+}
+
+@media (prefers-color-scheme: dark) {
+  .html {
+    background-color: #333333;
+    color: #ffffff;
+  }
 }
 
 /* .body */
@@ -37,12 +45,19 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   padding: 10px;
   font-family: monospace;
   font-size: 1rem;
-  color: #333333;
+  color: currentColor;
   line-height: 1;
   width: 100%;
   border: 1px solid #888888;
+  background-color: #ffffff;
   -moz-appearance: none;
   -webkit-appearance: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .form__input {
+    background-color: #333333;
+  }
 }
 
 .form__input.form__input--unobtrusive {
