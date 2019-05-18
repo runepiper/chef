@@ -67,10 +67,6 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   content: '—';
 }
 
-.navigation__link {
-  color: currentColor;
-}
-
 /* .list */
 .list {
 

@@ -3,16 +3,16 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="styles.css?v=<?php echo time() ?>">
-        <title>Chef</title>
+        <title>Chef — Allerlei Rezepte</title>
     </head>
     <body class="body">
         <?php require dirname(__DIR__) . '/partials/search.php' ?>
         <main class="main">
-            <h1 class="headline">Chef</h1>
+            <h1 class="headline">Rezepte</h1>
             <ul class="list">
                 <?php foreach($recipes as $recipe): ?>
                     <li class="list__item">
-                        <a class="list__link" href="<?php echo $recipe->getSlug() ?>">
+                        <a class="link" href="<?php echo $recipe->getSlug() ?>">
                             <?php echo $recipe->getTitle() ?>
                         </a>
                     </li>

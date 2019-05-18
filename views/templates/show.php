@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="styles.css">
-        <title>Chef</title>
+        <title><?php echo $recipe->getTitle() ?> — Chef — Allerlei Rezepte</title>
     </head>
     <body class="body">
         <?php require_once dirname(__DIR__) . '/partials/search.php' ?>
