@@ -92,17 +92,56 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 }
 
 .article table {
-  font-weight: bold;
+  font-size: 0.75rem;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+@media all and (min-width: 600px) {
+  .article table {
+    font-size: 1rem;
+    font-weight: bold;
+  }
 }
 
 .article thead {
   display: none;
 }
 
-.article td:not(:first-child) {
-  padding-left: 20px;
+.article tr {
+  display: block;
+}
+
+.article tr:not(:last-child) {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #888888;
+}
+
+@media all and (min-width: 600px) {
+  .article tr {
+    display: table-row;
+  }
+
+  .article tr:not(:last-child) {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.article td {
+  display: inline;
+}
+
+@media all and (min-width: 600px) {
+  .article td {
+    display: table-cell;
+  }
+
+  .article td:not(:first-child) {
+    padding-left: 20px;
+  }
 }
 
 .article p {
