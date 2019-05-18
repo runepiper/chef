@@ -74,7 +74,17 @@ class RecipeBook
 
     public function search()
     {
+        $recipes = [];
         $query = filter_input(INPUT_GET, 'query');
+
+        foreach (scandir(dirname(__DIR__) . '/recipes/') as $file) {
+            if(substr($file, 0, 1) !== '.' && levenshtein($file, $query) < 10) {
+                $recipe = new Recipe;
+                $recipe->setFilename($file);
+
+                $recipes[] = $recipe;
+            }
+        }
 
         require_once '../views/templates/search.php';
     }

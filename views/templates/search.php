@@ -9,6 +9,18 @@
         <h1 class="headline">
             Suche nach <?php echo $query ?>
         </h1>
-        …
+        <?php if($recipes): ?>
+            <ul class="list">
+                <?php foreach($recipes as $recipe): ?>
+                    <li class="list__item">
+                        <a class="list__link" href="<?php echo $recipe->getSlug() ?>">
+                            <?php echo $recipe->getTitle() ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php else: ?>
+            <p>Keine Rezepte gefunden</p>
+        <?php endif; ?>
     </body>
 </html>
