@@ -15,7 +15,7 @@
             <article class="article">
                 <?php echo $recipe->getText() ?>
             </article>
-            <ul class="list">
+            <ul class="list list--small">
                 <?php foreach($recipe->getCategories() as $category): ?>
                     <li class="list__item">
                         <a class="list__link" href="/?action=search&query=<?php echo trim($category) ?>">

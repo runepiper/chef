@@ -84,11 +84,21 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 }
 
 /* .list */
+.list.list--small {
+  font-size: 0.75rem;
+}
+
 .list__item {
   position: relative;
   line-height: 1.1;
   padding-left: 20px;
   padding-bottom: 5px;
+}
+
+.list.list--small .list__item {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .list__item::before {
@@ -110,6 +120,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 /* .article */
 .article {
   position: relative;
+  margin-bottom: 40px;
 }
 
 .article h1 {
@@ -195,6 +206,12 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 /* .main */
 .main {
   margin-bottom: 40px;
+}
+
+.main::after {
+  display: block;
+  clear: both;
+  content: '';
 }
 
 /* .footer */
