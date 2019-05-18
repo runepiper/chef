@@ -89,15 +89,23 @@ class RecipeBook
         );
 
         for ($i = 0; $i < count($recipes); $i++) {
-            if(in_array($query, $recipes[$i]->getCategories())) {
-                continue;
-            }
+            $match = false;
 
             if(strripos(strtolower($recipes[$i]->getTitle()), strtolower($query)) !== false) {
+                // We don't have to go any further
+                // so go to the next item.
                 continue;
             }
 
-            unset($recipes[$i]);
+            foreach ($recipes[$i]->getCategories() as $category) {
+                if(strripos(strtolower($category), strtolower($query)) !== false) {
+                    $match = true;
+                }
+            }
+
+            if($match === false) {
+                unset($recipes[$i]);
+            }
         }
 
         require_once '../views/templates/index.php';
