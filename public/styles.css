@@ -49,11 +49,6 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   -webkit-appearance: none;
 }
 
-::placeholder {
-  text-align: right;
-  transform: translateX(15px) translateY(1px);
-}
-
 /* .list */
 .list {
 

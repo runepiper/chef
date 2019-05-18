@@ -2,14 +2,14 @@
 <html class="html">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="styles.css?v=<?php echo time() ?>">
         <title>Chef</title>
     </head>
     <body class="body">
         <form class="form" action="/">
             <input type="hidden" name="action" value="search">
             <label class="form__label form__label--hidden">Suchbegriff</label>
-            <input class="form__input" type="search" name="query" placeholder="🔍" value="<?php echo $query ?>">
+            <input class="form__input" type="search" name="query" placeholder="Suche…" value="<?php echo $query ?? '' ?>">
         </form>
         <main class="main">
             <h1 class="headline">Chef</h1>
