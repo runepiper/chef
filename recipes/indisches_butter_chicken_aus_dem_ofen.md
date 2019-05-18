@@ -1,3 +1,8 @@
+<!--
+categories: Asien, Braten, Geflügel, Hauptspeise, Indien
+source: https://www.chefkoch.de/rezepte/2766911428603391/Indisches-Butter-Chicken-aus-dem-Ofen.html
+-->
+
 # Indisches Butter Chicken aus dem Ofen
 
 ## Zutaten
