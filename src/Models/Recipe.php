@@ -123,6 +123,6 @@ class Recipe
      */
     public function getSlug(): string
     {
-        return '/' . md5($this->getTitle());
+        return '/' . md5($this->getFilename());
     }
 }

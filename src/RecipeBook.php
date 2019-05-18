@@ -9,6 +9,10 @@ class RecipeBook
 {
     public function boot()
     {
+        if(!file_exists('../public/cache.php')) {
+            $this->generateCache();
+        }
+
         switch (filter_input(INPUT_GET, 'action')) {
             case 'recipe':
                 $this->recipe();
@@ -24,16 +28,9 @@ class RecipeBook
 
     public function index()
     {
-        $recipes = [];
-
-        foreach (scandir(dirname(__DIR__) . '/recipes/') as $file) {
-            if(substr($file, 0, 1) !== '.') {
-                $recipe = new Recipe;
-                $recipe->setTitle($file);
-
-                $recipes[] = $recipe;
-            }
-        }
+        $recipes = unserialize(
+            file_get_contents('../public/cache.php')
+        );
 
         require_once '../views/templates/index.php';
     }
@@ -87,15 +84,67 @@ class RecipeBook
             header('Location: /');
         }
 
+        $recipes = unserialize(
+            file_get_contents('../public/cache.php')
+        );
+
+        for ($i = 0; $i < count($recipes); $i++) {
+            if(in_array($query, $recipes[$i]->getCategories())) {
+                continue;
+            }
+
+            if(strripos(strtolower($recipes[$i]->getTitle()), strtolower($query)) !== false) {
+                continue;
+            }
+
+            unset($recipes[$i]);
+        }
+
+        require_once '../views/templates/index.php';
+    }
+
+    /**
+     * Creates a PHP file that contains
+     * the serialized recipe data for
+     * faster processing.
+     */
+    private function generateCache()
+    {
+        $recipes = [];
+
         foreach (scandir(dirname(__DIR__) . '/recipes/') as $file) {
-            if(substr($file, 0, 1) !== '.' && stripos($file, $query) !== false) {
+            if(substr($file, 0, 1) !== '.') {
+                $content = file_get_contents('../recipes/' . $file);
+                $title = '';
+                $categories = [];
+                $source = '';
+
+                foreach (explode(PHP_EOL, $content) as $line) {
+                    if(preg_match('/^#{1}\s?\b/', $line)) {
+                        $title = preg_replace('/^#{1}\s?\b/', '', $line);
+                    }
+
+                    if(strpos($line, 'categories') !== false) {
+                        $categories = explode(',',
+                            preg_replace('/^(\s*categories\:?\s?)\s?/', '', $line)
+                        );
+                    }
+
+                    if(strpos($line, 'source') !== false) {
+                        $source = preg_replace('/^(\s*source\:?\s?)/', '', $line);
+                    }
+                }
+
                 $recipe = new Recipe;
-                $recipe->setTitle($file);
+                $recipe->setTitle($title);
+                $recipe->setFilename($file);
+                $recipe->setCategories($categories);
+                $recipe->setSource($source);
 
                 $recipes[] = $recipe;
             }
         }
 
-        require_once '../views/templates/index.php';
+        file_put_contents('../public/cache.php', serialize($recipes));
     }
 }
