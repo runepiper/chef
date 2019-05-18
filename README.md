@@ -12,7 +12,8 @@ That's all
 ## Adding recipes
 
 - Add markdown files to the `./recipes/` directory.
-- You can enrich your recipes with some meta information: ```markdown
+- You can enrich your recipes with some meta information:
+```markdown
 <!--
 categories: bread, wild garlic
 source: https://www.domain.de/some/recipe.html
