@@ -6,19 +6,25 @@
         <title>Chef</title>
     </head>
     <body class="body">
-        <h1 class="headline"><?php echo count($recipes); ?> Rezepte im Bestand</h1>
-        <form>
+        <form class="form" action="/">
             <input type="hidden" name="action" value="search">
-            <input type="search" name="query">
+            <label class="form__label form__label--hidden">Suchbegriff</label>
+            <input class="form__input" type="search" name="query" placeholder="🔍">
         </form>
-        <ul class="list">
-            <?php foreach($recipes as $recipe): ?>
-                <li class="list__item">
-                    <a class="list__link" href="<?php echo $recipe->getSlug() ?>">
-                        <?php echo $recipe->getTitle() ?>
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+        <main class="main">
+            <h1 class="headline">Chef</h1>
+            <ul class="list">
+                <?php foreach($recipes as $recipe): ?>
+                    <li class="list__item">
+                        <a class="list__link" href="<?php echo $recipe->getSlug() ?>">
+                            <?php echo $recipe->getTitle() ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </main>
+        <footer class="footer">
+            <?php echo count($recipes); ?> Rezepte im Bestand
+        </footer class="footer">
     </body>
 </html>

@@ -6,21 +6,27 @@
         <title><?php echo $recipe->getTitle() ?> — Chef</title>
     </head>
     <body class="body">
-        <h1 class="headline">
-            <?php echo $recipe->getTitle() ?>
-        </h1>
-        <div class="rich-text">
-            <?php echo $recipe->getText() ?>
-        </div>
-        <aside>
-            Quelle: <a href="<?php echo $recipe->getSource() ?>" target="_blank" rel="noopener"><?php echo $recipe->getSource() ?></a>
-        </aside>
-        <ul class="list">
-            <?php foreach($recipe->getCategories() as $category): ?>
-                <li class="list__item">
-                    <?php echo trim($category) ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+        <form class="form" action="/">
+            <label class="form__label form__label--hidden">Suchbegriff</label>
+            <input class="form__input" type="search" name="query" placeholder="🔍">
+        </form>
+        <main class="main">
+            <h1 class="headline">
+                <?php echo $recipe->getTitle() ?>
+            </h1>
+            <article class="article">
+                <?php echo $recipe->getText() ?>
+            </article>
+            <ul class="list">
+                <?php foreach($recipe->getCategories() as $category): ?>
+                    <li class="list__item">
+                        <?php echo trim($category) ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </main>
+        <footer class="footer">
+            Quelle: <a class="link" href="<?php echo $recipe->getSource() ?>" target="_blank" rel="noopener"><?php echo $recipe->getSource() ?></a>
+        </footer>
     </body>
 </html>
