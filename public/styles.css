@@ -89,7 +89,8 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 
 .article table {
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .article thead {
