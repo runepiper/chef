@@ -69,8 +69,9 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 }
 
 /* .list */
-.list {
-
+.list__item::before {
+  content: '#';
+  color: #888888;
 }
 
 /* .link */
