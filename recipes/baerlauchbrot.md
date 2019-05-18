@@ -25,4 +25,4 @@ Zu 2 Brotlaiben formen. Oben einschneiden. Entweder eine Stunde an einem warmen 
 
 Es empfiehlt sich, eine Schüssel Wasser mit in den Ofen zu stellen, oder den Ofen zu befeuchten, dann wird die Kruste schöner. Man sieht eigentlich, wann das Brot fertig ist. Die Kruste ist dann schön hellbraun. Die Backzeit hängt auch von der Größe der Laibe ab.
 
-![Lecker Bärlauchbrot](https://img.chefkoch-cdn.de/ck.de/rezepte/236/236782/602940-960x720-baerlauchbrot.jpg)
+![Lecker Bärlauchbrot](/uploads/baerlauchbrot.jpeg)

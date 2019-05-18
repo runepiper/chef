@@ -3,7 +3,7 @@
 
     # Exclude directories and files from rewriting
     # RewriteRule ^assets - [NC,L]
-    # RewriteRule ^media/persons/ - [NC,L]
+    RewriteRule ^uploads/ - [NC,L]
     RewriteRule ^styles.css - [NC,L]
 
     RewriteRule ^([A-Z0-9]{32})$ index.php?action=recipe&recipe=$1 [NC,L]

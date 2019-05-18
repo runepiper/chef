@@ -19,4 +19,5 @@ categories: bread, wild garlic
 source: https://www.domain.de/some/recipe.html
 -->
 ```
+- Want an image? No problem. Just add it to the `public/uploads/` folder and link it in your markdown recipe.
 - You can easily add recipes with the [chef-scraper](https://github.com/janschill/chef-scraper) extension.
