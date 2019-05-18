@@ -91,11 +91,13 @@ class RecipeBook
         for ($i = 0; $i < count($allRecipes); $i++) {
             if(strripos(strtolower($allRecipes[$i]->getTitle()), strtolower($query)) !== false) {
                 $recipes[] = $allRecipes[$i];
+                continue;
             }
 
             foreach ($allRecipes[$i]->getCategories() as $category) {
                 if(strripos(strtolower($category), strtolower($query)) !== false) {
                     $recipes[] = $allRecipes[$i];
+                    break;
                 }
             }
         }
