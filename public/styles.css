@@ -1,7 +1,7 @@
 /*! minireset.css v0.0.4 | MIT License | github.com/jgthms/minireset.css */
 html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,embed,iframe,object,video{height:auto;max-width:100%}audio{max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
 
-/* .html */
+/* Html */
 .html {
   font-family: monospace;
   font-size: 20px;
@@ -17,13 +17,13 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   }
 }
 
-/* .body */
+/* Body */
 .body {
   padding: 20px;
   max-width: 750px;
 }
 
-/* .headline */
+/* Headline */
 .headline {
   text-transform: uppercase;
   font-weight: bold;
@@ -33,7 +33,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   margin-bottom: 10px;
 }
 
-/* .form */
+/* Form */
 .form {
   margin-bottom: 40px;
 }
@@ -69,7 +69,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   opacity: 1;
 }
 
-/* .navigation */
+/* Navigation */
 .navigation {
   color: #888888;
   font-size: 0.75rem;
@@ -83,7 +83,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   content: '—';
 }
 
-/* .list */
+/* List */
 .list.list--small {
   font-size: 0.75rem;
 }
@@ -112,12 +112,12 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   color: currentColor;
 }
 
-/* .link */
+/* Link */
 .link {
   color: currentColor;
 }
 
-/* .article */
+/* Article */
 .article {
   position: relative;
   margin-bottom: 40px;
@@ -203,7 +203,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   }
 }
 
-/* .main */
+/* Main */
 .main {
   margin-bottom: 40px;
 }
@@ -214,7 +214,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   content: '';
 }
 
-/* .footer */
+/* Footer */
 .footer {
   color: #888888;
   font-size: 0.75rem;
