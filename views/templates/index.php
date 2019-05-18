@@ -20,7 +20,7 @@
             </ul>
         </main>
         <footer class="footer">
-            <?php echo count($recipes); ?> Rezepte <?php echo $query ? 'für Suchbegriff »' . $query . '«' : 'im Bestand' ?>
+            <?php echo count($recipes); ?> Rezepte <?php echo (isset($query) ? 'für Suchbegriff »' . $query . '«' : 'im Bestand') ?>
         </footer class="footer">
         <?php require dirname(__DIR__) . '/partials/navigation.php' ?>
     </body>
