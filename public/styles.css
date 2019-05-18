@@ -79,6 +79,10 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 }
 
 /* .article */
+.article {
+  position: relative;
+}
+
 .article h1 {
   display: none;
 }
@@ -109,12 +113,14 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 @media all and (min-width: 1400px) {
   .article img {
     position: absolute;
-    top: 90px;
+    top: 0;
     left: 750px;
     right: 0;
     width: calc(100% - 750px);
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     max-width: 600px;
+    width: 100%;
   }
 }
 
