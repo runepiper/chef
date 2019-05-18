@@ -115,6 +115,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 /* Link */
 .link {
   color: currentColor;
+  word-break: break-all;
 }
 
 /* Article */
