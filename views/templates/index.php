@@ -6,11 +6,7 @@
         <title>Chef</title>
     </head>
     <body class="body">
-        <form class="form" action="/">
-            <input type="hidden" name="action" value="search">
-            <label class="form__label form__label--hidden">Suchbegriff</label>
-            <input class="form__input" type="search" name="query" placeholder="Suche…" value="<?php echo $query ?? '' ?>">
-        </form>
+        <?php require_once dirname(__DIR__) . '/partials/search.php' ?>
         <main class="main">
             <h1 class="headline">Chef</h1>
             <ul class="list">

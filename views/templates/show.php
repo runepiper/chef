@@ -3,13 +3,10 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="styles.css">
-        <title><?php echo $recipe->getTitle() ?> — Chef</title>
+        <title>Chef</title>
     </head>
     <body class="body">
-        <form class="form" action="/">
-            <label class="form__label form__label--hidden">Suchbegriff</label>
-            <input class="form__input" type="search" name="query" placeholder="🔍">
-        </form>
+        <?php require_once dirname(__DIR__) . '/partials/search.php' ?>
         <main class="main">
             <h1 class="headline">
                 <?php echo $recipe->getTitle() ?>

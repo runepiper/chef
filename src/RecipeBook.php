@@ -29,7 +29,7 @@ class RecipeBook
         foreach (scandir(dirname(__DIR__) . '/recipes/') as $file) {
             if(substr($file, 0, 1) !== '.') {
                 $recipe = new Recipe;
-                $recipe->setFilename($file);
+                $recipe->setTitle($file);
 
                 $recipes[] = $recipe;
             }
@@ -43,12 +43,17 @@ class RecipeBook
         $recipe = new Recipe;
         $categories = [];
         $source = '';
+        $title = '';
 
         foreach (scandir(dirname(__DIR__) . '/recipes/') as $file) {
             if(md5($file) === filter_input(INPUT_GET, 'recipe')) {
                 $content = file_get_contents('../recipes/' . $file);
 
                 foreach (explode(PHP_EOL, $content) as $line) {
+                    if(preg_match('/^#{1}\s?\b/', $line)) {
+                        $title = preg_replace('/^#{1}\s?\b/', '', $line);
+                    }
+
                     if(strpos($line, 'categories') !== false) {
                         $categories = explode(',',
                             preg_replace('/^(\s*categories\:?\s?)\s?/', '', $line)
@@ -60,6 +65,7 @@ class RecipeBook
                     }
                 }
 
+                $recipe->setTitle($title);
                 $recipe->setFilename($file);
                 $recipe->setCategories($categories);
                 $recipe->setSource($source);
@@ -77,10 +83,14 @@ class RecipeBook
         $recipes = [];
         $query = filter_input(INPUT_GET, 'query');
 
+        if(empty($query)) {
+            header('Location: /');
+        }
+
         foreach (scandir(dirname(__DIR__) . '/recipes/') as $file) {
-            if(substr($file, 0, 1) !== '.' && levenshtein($file, $query) < 10) {
+            if(substr($file, 0, 1) !== '.' && stripos($file, $query) !== false) {
                 $recipe = new Recipe;
-                $recipe->setFilename($file);
+                $recipe->setTitle($file);
 
                 $recipes[] = $recipe;
             }

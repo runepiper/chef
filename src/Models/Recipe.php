@@ -11,6 +11,11 @@ class Recipe
     protected $filename = '';
 
     /**
+     * @var string
+     */
+    protected $title = '';
+
+    /**
      * @var array
      */
     protected $categories = [];
@@ -24,6 +29,22 @@ class Recipe
      * @var string
      */
     protected $text = '';
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle(string $title)
+    {
+        $this->title = $title;
+    }
 
     /**
      * @return string
@@ -100,16 +121,8 @@ class Recipe
     /**
      * @return string
      */
-    public function getTitle(): string
-    {
-        return trim(str_replace(['.md', '-'], ['', ' '], $this->filename));
-    }
-
-    /**
-     * @return string
-     */
     public function getSlug(): string
     {
-        return '/' . md5($this->filename);
+        return '/' . md5($this->getTitle());
     }
 }
