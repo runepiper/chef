@@ -86,6 +86,6 @@ class RecipeBook
             }
         }
 
-        require_once '../views/templates/search.php';
+        require_once '../views/templates/index.php';
     }
 }

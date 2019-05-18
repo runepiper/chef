@@ -7,7 +7,8 @@
     </head>
     <body class="body">
         <h1 class="headline"><?php echo count($recipes); ?> Rezepte im Bestand</h1>
-        <form action="suche">
+        <form>
+            <input type="hidden" name="action" value="search">
             <input type="search" name="query">
         </form>
         <ul class="list">
