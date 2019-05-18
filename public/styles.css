@@ -29,6 +29,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
   font-weight: bold;
   font-size: 1.2rem;
   letter-spacing: 0.1em;
+  line-height: 1.2;
   margin-bottom: 10px;
 }
 
