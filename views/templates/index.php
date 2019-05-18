@@ -9,7 +9,7 @@
         <form class="form" action="/">
             <input type="hidden" name="action" value="search">
             <label class="form__label form__label--hidden">Suchbegriff</label>
-            <input class="form__input" type="search" name="query" placeholder="🔍">
+            <input class="form__input" type="search" name="query" placeholder="🔍" value="<?php echo $query ?>">
         </form>
         <main class="main">
             <h1 class="headline">Chef</h1>
