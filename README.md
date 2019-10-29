@@ -1,4 +1,6 @@
-# Chef
+[![Build Status](https://github.com/runepiper/chef/workflows/Deploying/badge.svg)](https://github.com/runepiper/chef/actions)
+
+# Chef 👨‍🍳
 
 Chef is a small PHP web application that acts as a central place for your recipes.
 
