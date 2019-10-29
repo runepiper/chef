@@ -2,3 +2,4 @@ vendor
 .DS_Store
 public/cache.php
 public/uploads
+.phpunit.result.cache
