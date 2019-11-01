@@ -30,11 +30,9 @@ jobs:
       run: composer install --no-suggest --no-progress --no-interaction --no-dev
     - name: Prepare deployment
       run: |
-        npm install -g gulp
-        'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+        apt-get update -yq && apt-get install openssh-client -y
         eval $(ssh-agent -s)
         ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
-        mkdir -p ~/.ssh
         '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     - name: Deploy
       run: rsync -av -e "ssh" --exclude="public/uploads" public recipes src views composer.json p201628@p201628.mittwald.info:/html/rezepte
