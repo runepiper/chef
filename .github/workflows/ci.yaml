@@ -28,12 +28,14 @@ jobs:
 
     - name: Install composer dependencies
       run: composer install --no-suggest --no-progress --no-interaction --no-dev
-    # - name: Prepare deployment
-    #   run: |
-    #     'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )' && eval $(ssh-agent -s)
-    #     ssh-add <(echo "$SSH_PRIVATE_KEY")
-    #     mkdir -p ~/.ssh
-    #     '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-    #     'which rsync || ( apt-get update -y && apt-get install rsync -y)'
-    # - name: Deploy
-    #   run: rsync -av -e "ssh" --exclude="public/uploads" public recipes src views composer.json p201628@p201628.mittwald.info:/html/rezepte
+    - name: Prepare deployment
+      run: |
+        apt-get update -y
+        apt-get install openssh-client -y
+        apt-get install rsync -y
+        eval $(ssh-agent -s)
+        ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
+        mkdir -p ~/.ssh
+        '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - name: Deploy
+      run: rsync -av -e "ssh" --exclude="public/uploads" public recipes src views composer.json p201628@p201628.mittwald.info:/html/rezepte
