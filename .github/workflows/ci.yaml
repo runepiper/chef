@@ -19,7 +19,7 @@ jobs:
     needs: phpunit
     runs-on: ubuntu-latest
     container:
-      image: mattiasgeniar/php73
+      image: misterio92/ci-php-node:2.0
 
     steps:
     - uses: actions/checkout@v1
@@ -30,9 +30,8 @@ jobs:
       run: composer install --no-suggest --no-progress --no-interaction --no-dev
     - name: Prepare deployment
       run: |
-        apt-get update -y
-        apt-get install openssh-client -y
-        apt-get install rsync -y
+        npm install -g gulp
+        'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
         eval $(ssh-agent -s)
         ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
         mkdir -p ~/.ssh
